@@ -13,7 +13,7 @@ defmodule DistroWeb.HeartbeatChannel do
 
   def handle_info({:beat, i}, socket) do
     broadcast!(socket, "ping", %{body: i}) # broadcast the current heartbeat number to all connected clients
-    Process.send_after(self(), {:beat, i + 1}, 2000) # send a message to the current server with a new (even numbered) state after 2 seconds
+    Process.send_after(self(), {:beat, i + 2}, 2000) # send a message to the current server with a new (even numbered) state after 2 seconds
     {:noreply, socket}
   end
 end
