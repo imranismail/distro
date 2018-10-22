@@ -3,6 +3,7 @@ defmodule DistroWeb.UserSocket do
 
   ## Channels
   # channel "room:*", DistroWeb.RoomChannel
+  channel "heartbeat:*", DistroWeb.HeartbeatChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
